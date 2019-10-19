@@ -1,0 +1,18 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    username: xxxxxxxxx
+    password: xxxxxxxxx
+    url: jdbc:mysql://xxxxxxxxxx:3306/xxxxxxxxxxx?characterEncoding=UTF-8
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml    #  mybatis主配置文件所在路径
+#  type-aliases-package: cn.lizheng.study.mybatis.pojo   #  定义所有操作类的别名所在包
+  mapper-locations:                                     #  所有的mapper映射文件
+  - classpath:mapper/*.xml
+  dbcp2:                                        #  进行数据库连接池的配置
+    min-idle: 5                                 #  数据库连接池的最小维持连接数
+    initial-size: 5                             #  初始化提供的连接数
+    max-total: 5                                #  最大连接数
+    max-wait-millis: 200
